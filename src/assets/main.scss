@@ -1,0 +1,28 @@
+$namespace: 'pdc' !default;
+$block-sel: '-' !default;
+$element-sel: '__' !default;
+$modifier-sel: '--' !default;
+
+@mixin b($block){
+  $B: #{$namespace + $block-sel + $block};
+  .#{$B} {
+    @content;
+  }
+}
+@mixin e($el){
+  $Parent: &;
+  @at-root {
+    #{$Parent + $element-sel + $el} {
+      @content;
+    }
+  }
+}
+
+@mixin m($m){
+  $Parent: &;
+  @at-root {
+    #{$Parent + $modifier-sel + $m} {
+      @content;
+    }
+  }
+}

@@ -12,6 +12,91 @@
 - npm init vue@latest
   + vue3脚手架构建 构建出来的项目比较完整，专门为vue3项目打造的
 
+## 项目开发约定以及规范
+1. 样式架构
+
+    采用***BEM***框架, B: block(块), E: element(元素), M: modifier(修饰)，通常还会有命名空间限定,命名空间与块之间使用 ***-*** 连接，块与元素之间使用 ***__*** 连接，修饰与元素之间使用 ***--*** 连接。
+   + 例：el-input__wrapper， el是命名空间限定，input是块，wrapper是元素，所以最终的样式类名是el-input__wrapper。
+   + 例: el-button--success，el是命名空间限定，button是块，success是修饰，所以最终的样式类名是el-button--success。
+2. 样式架构
+
+    css样式框架有很多, 如sass、less、stylus等，可以根据情况自由选择。
+    + [Sass中文网](https://www.sass.hk/docs/)
+    + [Less中文网](https://lesscss.cn/usage/)
+
+    这里以Sass为例,演示集成Sass的流程
+    
+    ```npm install -D sass```
+    在资源目录下创建main.scss文件，并定义全局变量
+    ```scss
+    $namespace: 'pdc' !default;
+    $block-sel: '-' !default;
+    $element-sel: '__' !default;
+    $modifier-sel: '--' !default;
+    
+    @mixin b($block){
+      $B: #{$namespace + $block-sel + $block};
+      .#{$B} {
+        @content;
+      }
+    }
+    @mixin e($el){
+      $Parent: &;
+      @at-root {
+        #{$Parent + $element-sel + $el} {
+          @content;
+        }
+      }
+    }
+    
+    @mixin M($m){
+      $Parent: &;
+      @at-root {
+        #{$Parent + $modifier-sel + $m} {
+          @content;
+        }
+      }
+    }
+    ```
+    全局配置scss,在vite.config.ts中配置css预处理器
+    ~~~ts
+    export default defineConfig({
+      plugins: [vue()],
+      // scss全局样式预处理器
+      css: {
+        preprocessorOptions: {
+          scss: {
+            additionalData: `@import "./src/assets/main.scss";`
+          }
+        }
+      }
+    })    
+    ~~~
+    vue中使用
+    ~~~vue
+    <template>
+      <div class="pdc-test">
+        hello world
+        <div class="pdc-test__inner">el</div>
+        <div class="pdc-test--success">m</div>
+      </div>
+    </template>
+    <style lang="scss">
+      @include b(test) {
+        color: red;
+        @include e(inner) {
+          color: blue;
+        }
+        @include m(success) {
+          color: green;
+        }
+      }
+    </style>
+    ~~~
+
+3. asd 
+4. 
+
 ## 常见问题&解决方法
 1. ***Q***: 控制台打印ref、reactive等对象时，控制台会显示[object Object]
 
