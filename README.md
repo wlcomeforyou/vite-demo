@@ -101,5 +101,24 @@
 1. ***Q***: 控制台打印ref、reactive等对象时，控制台会显示[object Object]
 
    ***A***: F12 打开控制台，点击设置，勾选自定义格式设置工具 
-2. ***Q***: 
+2. ***Q***: Vue组件自定义name
+
+   ***A***: 通过安装插件解决
+
+    ~~~
+    // 安装插件
+    npm install unplugin-vue-define-options
+    // 在vite.config.ts 引入插件
+    import DefineOptions from 'unplugin-vue-define-options/vite'
+    ......
+    export default defineConfig({
+      plugins: [
+        vue(),
+        DefineOptions()
+      ],
+      ......
+    })
+    
+    
+    ~~~
 3.
