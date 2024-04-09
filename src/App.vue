@@ -3,10 +3,12 @@
     hello world
     <div class="pdc-test__inner">el</div>
     <div class="pdc-test--success">m</div>
+    <Test/>
   </div>
 </template>
 
 <script setup lang="ts">
+import Test from "./components/Test.vue";
 </script>
 
 <style lang="scss">
