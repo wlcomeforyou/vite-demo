@@ -93,7 +93,6 @@
     </style>
     ~~~
 
-2. asd 
 2. ELEMENT-PLUS UI组件库
 
    ```npm install element-plus --save```安装
@@ -105,6 +104,14 @@
     
     app.use(ElementPlus)
     ~~~
+   
+3. 使用TailWindCSS
+
+   安装依赖`npm install -D tailwindcss postcss autoprefixer`
+
+   初始化`npx tailwindcss init -p`,生成`tailwind.config.js`和`postcss.config.js files`
+
+   配置模板路径（tailwind.config.js）
    
 4. 
 
@@ -157,4 +164,51 @@
       console.log(app?.proxy?.$env);
     </script>
     ~~~
-4. 
+4. ***Q***: vue3中样式新特性
+
+   ***A***:
+
+   1. vue2中使用 `/deep/`进行样式穿透，vue3中也可以使用，但是会提示警告，vue3中使用 `:deep(css类名)`
+   2. vue3中使用`:slotted(css类名)`设置插槽里面的样式
+   3. vue3中使用`:global(css类名)`设置全局的样式
+   4. vue3中使用`v-bind(变量)`支持新的动态css
+      ~~~vue
+      <template>
+          <div class="dynCss">test1</div>
+      </template>
+
+      <script setup lang="ts" name=Test1>
+      import {ref} from "vue";
+
+      const fontColor = ref('red')
+      </script>
+
+      <style scoped lang="scss">
+      .dynCss {
+         color: v-bind('fontColor');   // 使用v-bind
+      }
+      </style>
+      ~~~
+      
+   5. vue3中支持使用样式模块
+      ~~~vue
+      <template>
+        <div :class="[$style.dynCss,$style.border]">test1</div>
+      </template>
+      
+      <script setup lang="ts" name=Test1>
+      
+      </script>
+      
+      <style module>
+      .dynCss {
+        color: red;
+      }
+      .border {
+        border: 1px solid #000;
+      }
+      </style>
+      ~~~
+   6.阿萨德
+5. 
+ 
