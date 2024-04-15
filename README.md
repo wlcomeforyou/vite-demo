@@ -6,7 +6,7 @@
 - WEBSTORM
   + 设置-> 语言与框架 -> TypeScript -> 选择 Vue Language Service
 
-## 项目创建
+## 项目构建
 - npm init vite@latest 
   + vite构建 构建出来的项目比较精简，可以适配多种前端框架比如、vue、react等
 - npm init vue@latest
@@ -94,6 +94,18 @@
     ~~~
 
 2. asd 
+2. ELEMENT-PLUS UI组件库
+
+   ```npm install element-plus --save```安装
+
+   在main.ts中引入组件库
+    ~~~ts
+    import ElementPlus from 'element-plus'
+    import 'element-plus/dist/index.css'
+    
+    app.use(ElementPlus)
+    ~~~
+   
 4. 
 
 ## 常见问题&解决方法
