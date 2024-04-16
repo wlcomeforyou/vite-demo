@@ -254,7 +254,23 @@
          
      
    + 全局字体大小切换
-   + 主题切换
 
-6. 
+     安装vueUse依赖，通过设置全局的css的变量，更改全局字体颜色变量达到效果
+     ~~~css
+     :root{
+        --custFontSize: 14px;
+     }
+     .xxx{
+        font-size: var(--custFontSize);
+     }
+     ~~~
+     ~~~vue
+     import {useCssVar} from '@vueuse/core'
+     const size = useCssVar('--custFontSize')
+     ~~~
+   + 主题切换
+     与全局字体大小切换原理一直。
+
+6. 大师
+7. 
  

@@ -16,16 +16,8 @@
       <el-collapse-item title="PostCss插件 适配多分辨率" name="3">
         <Test3/>
       </el-collapse-item>
-      <el-collapse-item title="Controllability" name="4">
-        <div>
-          Decision making: giving advices about operations is acceptable, but do
-          not make decisions for the users;
-        </div>
-        <div>
-          Controlled consequences: users should be granted the freedom to
-          operate, including canceling, aborting or terminating current
-          operation.
-        </div>
+      <el-collapse-item title="更改全局文本字体大小" name="4">
+        <Test4/>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -40,6 +32,7 @@ import {ref} from "vue";
 import Test1 from "./components/Test1.vue";
 import Test2 from "./components/Test2.vue";
 import Test3 from "./components/Test3.vue";
+import Test4 from "./components/Test4.vue";
 const activeName = ref('1')
 </script>
 

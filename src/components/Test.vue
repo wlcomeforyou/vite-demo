@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen bg-red-500 text-2xl text-slate-300">{{$env}}</div>
+  <div class="w-screen bg-red-500 text-2xl text-slate-300 test-text">{{$env}}</div>
 </template>
 
 <script setup lang="ts" name="Test">
@@ -10,5 +10,7 @@ console.log(app?.proxy?.$env);
 </script>
 
 <style scoped>
-
+.test-text {
+  font-size: var(--custFontSize);
+}
 </style>
