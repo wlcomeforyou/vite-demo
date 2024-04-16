@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts" name=Test1>
-
+// 动态样式 css模块
 </script>
 
 <style module>

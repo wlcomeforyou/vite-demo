@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import {postcssPxToViewport} from './src/plugins/postcss-px-to-viewport'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +15,9 @@ export default defineConfig({
       scss: {
         additionalData: `@import "./src/assets/main.scss";`
       }
+    },
+    postcss: {
+      plugins: [postcssPxToViewport()]
     }
   }
 })
