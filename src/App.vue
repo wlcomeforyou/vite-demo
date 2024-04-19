@@ -19,6 +19,9 @@
       <el-collapse-item title="更改全局文本字体大小" name="4">
         <Test4/>
       </el-collapse-item>
+      <el-collapse-item title="echarts-地图" name="5">
+        <Test5/>
+      </el-collapse-item>
     </el-collapse>
   </div>
 
@@ -33,6 +36,7 @@ import Test1 from "./components/Test1.vue";
 import Test2 from "./components/Test2.vue";
 import Test3 from "./components/Test3.vue";
 import Test4 from "./components/Test4.vue";
+import Test5 from "./components/Test5.vue";
 const activeName = ref('1')
 </script>
 

@@ -113,7 +113,17 @@
 
    配置模板路径（tailwind.config.js）
    
-4. 
+4. 使用ECharts
+   
+   安装依赖`npm install echarts -s`
+
+   引入, 如果是echarts4版本 `import echarts from 'echarts'`, 如果是echarts5版本 `import * as echarts from 'echarts'`。
+
+   还需要引入对应地图文件。
+
+   
+
+5. 
 
 ## 常见问题&解决方法
 1. ***Q***: 控制台打印ref、reactive等对象时，控制台会显示[object Object]
