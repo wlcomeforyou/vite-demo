@@ -13,7 +13,8 @@
     "echarts": "^5.5.0",
     "element-plus": "^2.7.0",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",

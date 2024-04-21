@@ -121,9 +121,14 @@
 
    还需要引入对应地图文件。
 
+5. 使用Router
    
+   安装依赖`npm install vue-router -S`
 
-5. 
+   新建路由文件,并在main.ts使用注册。
+
+
+6. 
 
 ## 常见问题&解决方法
 1. ***Q***: 控制台打印ref、reactive等对象时，控制台会显示[object Object]

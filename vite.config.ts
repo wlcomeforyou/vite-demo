@@ -2,6 +2,7 @@ import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import {postcssPxToViewport} from './src/plugins/postcss-px-to-viewport'
+import { fileURLToPath, URL} from "node:url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,6 +19,11 @@ export default defineConfig({
     },
     postcss: {
       plugins: [postcssPxToViewport()]
+    }
+  },
+  resolve: {
+    alias:{
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })

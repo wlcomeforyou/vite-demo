@@ -4,9 +4,11 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
 import './assets/tailwind.css'
+import router from './router'
 
 let app = createApp(App);
 app.use(ElementPlus)
+app.use(router)
 // 定义全局变量
 app.config.globalProperties.$env = 'dev'
 // 声明变量类型
